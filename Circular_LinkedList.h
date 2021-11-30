@@ -1,7 +1,24 @@
-# Circle_Linkedlist
+#ifndef _CIRCULAR_H_
+#define _CIRCULAR_H_
 
-Danh sách liên kết vòng bao gồm các chức năng như:
-//Common function
+#include<iostream>
+#include<vector>
+#include<fstream>
+#include<string>
+using namespace std;
+
+struct Cir_node {
+	int data;
+	Cir_node* p_next;
+	Cir_node* p_prev;
+};
+
+struct Cir_list {
+	Cir_node* p_head;
+};
+
+namespace Circular {
+	//Common function
 	bool is_empty(Cir_list l);
 	void init(Cir_list& l);
 	void display_list(Cir_list l);
@@ -11,7 +28,7 @@ Danh sách liên kết vòng bao gồm các chức năng như:
 	void read_from_file(Cir_list& l, string file_path);
 	void demonstration();
 
-//Add function
+	//Add function
 	void add_head(Cir_list& l, int data);
 	void add_tail(Cir_list& l, int data);
 	void add_before(Cir_list& l, int key, int data);
@@ -19,7 +36,7 @@ Danh sách liên kết vòng bao gồm các chức năng như:
 	void add_at(Cir_list& l, int pos, int data);
 	void add_ascending(Cir_list& l, int data);
 
-//Remove function
+	//Remove function
 	void remove_head(Cir_list& l);
 	void remove_value(Cir_list& l, int value);
 	void remove_index(Cir_list& l, int index);
@@ -29,3 +46,6 @@ Danh sách liên kết vòng bao gồm các chức năng như:
 	void remove_after(Cir_list& l, int value);
 	void remove_bigger(Cir_list& l, int value);
 	void remove_smaller(Cir_list& l, int value);
+}
+
+#endif // !_CIRCULAR_H_
